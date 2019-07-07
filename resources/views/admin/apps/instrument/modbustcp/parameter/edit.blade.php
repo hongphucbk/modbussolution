@@ -94,7 +94,7 @@
                                 <div class="col-md-3" >
                                     <label class="col-sm-12">Display</label>
                                     <select class="form-control" name="display">
-                                        @if($parameter->device_id = 1)
+                                        @if($parameter->display == 1)
                                             <option value="1">Yes</option>
                                             <option value="0">No display</option>
                                         @else

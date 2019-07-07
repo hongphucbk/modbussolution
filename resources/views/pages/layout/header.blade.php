@@ -6,7 +6,7 @@
 		<!-- Logo
 		============================================= -->
 		<div id="logo">
-			<a href="/" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="images/logo.png" alt="Phuc Truong Logo"></a>
+			<a href="" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="images/logo.png" alt="Phuc Truong Logo"></a>
 			<a href="index.html" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img src="images/logo@2x.png" alt="Phuc Truong Logo"></a>
 		</div><!-- #logo end -->
 
@@ -583,12 +583,12 @@
 				    <span class="label label-success dropdown-toggle" data-toggle="dropdown"> {{Auth::user()->name }}
 				    <span class="caret"></span></span>
 				    <ul class="dropdown-menu" style="background-color: none">
-				      <li><a class="phuc-login" href="member/app/helpdesk">My page</a></li>
+				      <!-- <li><a class="phuc-login" href="member/app/helpdesk">My page</a></li> -->
 				      <li><a class="phuc-login" href="scada/modbustcp/value">Instrument</a></li>
 				      <li><a class="phuc-login" href="logout">Logout</a></li>
 				    </ul>
 				@else
-					<a href="signup">Signup</a> |
+					<!-- <a href="signup">Signup</a> | -->
 					<a href="login">Login</a>
 				@endif
 			</div>

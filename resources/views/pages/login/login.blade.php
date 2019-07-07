@@ -22,7 +22,7 @@
         <div class="signin-content">
             <div class="signin-image">
                 <figure><img src="fontend/images/signin-image.jpg" alt="sing up image"></figure>
-                <a href="signup" class="signup-image-link">Create an account</a>
+                <!-- <a href="signup" class="signup-image-link">Create an account</a> -->
                 <a href="password/reset" class="signup-image-link">Forget password ?</a>
             </div>
 
@@ -59,14 +59,14 @@
                         <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
                     </div>
                 </form>
-                <div class="social-login">
+                <!-- <div class="social-login">
                     <span class="social-label">Or login with</span>
                     <ul class="socials">
                         <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
                         <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
                         <li><a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
                     </ul>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

@@ -151,8 +151,8 @@ Route::group(['prefix' => 'admin','middleware' => 'adminLogin'], function() {
                 Route::get('add','InsModbustcpControlController@get_Add_Admin');
                 Route::post('add','InsModbustcpControlController@post_Add_Admin');
 
-                // Route::get('edit/{id}','InsModbustcpParameterController@get_Edit_Admin');
-                // Route::post('edit/{id}','InsModbustcpParameterController@post_Edit_Admin');
+                Route::get('edit/{id}','InsModbustcpControlController@get_Edit_Admin');
+                Route::post('edit/{id}','InsModbustcpControlController@post_Edit_Admin');
             });
 
             Route::group(['prefix' => 'value'], function() {

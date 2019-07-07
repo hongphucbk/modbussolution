@@ -178,7 +178,7 @@
 	                                <td>{{ $val->note }}</td>
 
 	                                <td>
-                                        <a href="admin/app/modbustcp/parameter/edit/{{$val->id}}" class="btn btn-info">
+                                        <a href="admin/app/modbustcp/control/edit/{{$val->id}}" class="btn btn-info">
                                             <span class="glyphicon glyphicon-edit"></span>
                                             <span>Edit</span>            
                                         </a>

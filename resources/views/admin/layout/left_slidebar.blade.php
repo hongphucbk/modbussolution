@@ -15,7 +15,7 @@
                     </ul>
                 </li>
                 @endif
-                <li class="nav-small-cap">--- PERSONAL</li>
+                <!-- <li class="nav-small-cap">--- PERSONAL</li> -->
                 <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">Dashboard <span class="badge badge-pill badge-cyan ml-auto">4</span></span></a>
                     <!-- <ul aria-expanded="false" class="collapse">
                         <li><a href="index.html">Minimal </a></li>
@@ -34,13 +34,13 @@
                         
                     </ul>
                 </li>
-                <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-layout-grid2"></i><span class="hide-menu">Helpdesk</span></a>
+                <!-- <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-layout-grid2"></i><span class="hide-menu">Helpdesk</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="admin/app/helpdesk">Support Ticket</a></li>
                         <li><a href="admin/app/category">Category</a></li>
                          
                     </ul>
-                </li>
+                </li> -->
                 <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-layout-grid2"></i><span class="hide-menu">Apps Modbus TCP</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="admin/app/modbustcp/device">Device</a></li>
@@ -56,13 +56,13 @@
                     </ul>
                 </li>
 
-                <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fa fa-bars"></i><span class="hide-menu">Courses</span></a>
+                <!-- <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fa fa-bars"></i><span class="hide-menu">Courses</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="admin/app/course/info">All Courses</a></li>
                         <li><a href="admin/app/course/info/add">Add Course</a></li>
                         <li><a href="admin/app/course/category">All Category</a></li>
                     </ul>
-                </li>
+                </li> -->
                         
                 <!-- <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-email"></i><span class="hide-menu">Inbox</span></a>
                     <ul aria-expanded="false" class="collapse">

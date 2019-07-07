@@ -48,38 +48,40 @@ class InsModbustcpControlController extends Controller
 		return redirect()->back()->with('notification','Add successfully');
 	}
 
-	// public function get_Edit_Admin($id)
-	// {
-	// 	$parameter = InsModbustcpParameter::find($id);
-	// 	$devices = InsModbustcpDevice::all();
-	// 	return view('admin.apps.instrument.modbustcp.parameter.edit',compact('parameter','devices'));
-	// }
+	public function get_Edit_Admin($id)
+	{
+		$parameter = InsModbustcpParameter::find($id);
+		$devices = InsModbustcpDevice::all();
+		$control = InsModbustcpControl::find($id);
+		return view('admin.apps.instrument.modbustcp.control.edit',compact('control','devices'));
+	}
 
-	// public function post_Edit_Admin($id, Request $request)
-	// {
-	// 	$this->validate($request,[
- //            'name' => 'required',
- //            'device_id' => 'required',
- //            'register' => 'required',
- //        ],
- //        [
- //            'name.required'=>'Please input name',
- //            'device_id.required'=>'Please select device name',
- //            'register.required'=>'Please input register',
- //        ]);
+	public function post_Edit_Admin($id, Request $request)
+	{
+		$this->validate($request,[
+            'name' => 'required',
+            'device_id' => 'required',
+            'register' => 'required',
+        ],
+        [
+            'name.required'=>'Please input name',
+            'device_id.required'=>'Please select device name',
+            'register.required'=>'Please input register',
+        ]);
 
-	// 	$parameter = InsModbustcpParameter::find($id);
-	// 	$parameter->name = $request->name;
-	// 	$parameter->register = $request->register;
-	// 	$parameter->device_id = $request->device_id;
-	// 	$parameter->display = $request->display;
-	// 	$parameter->note = $request->note;
-	// 	$parameter->scalevalue = $request->scalevalue;
-	// 	$parameter->slaveid = $request->slaveid;
+		$control = InsModbustcpControl::find($id);
+		$control->name = $request->name;
+		$control->register = $request->register;
+		$control->device_id = $request->device_id;
+		$control->display = $request->display;
+		$control->note = $request->note;
+		$control->scalevalue = $request->scalevalue;
+		$control->slaveid = $request->slaveid;
+		$control->type = $request->type;
 		
-	// 	$parameter->save();
-	// 	return redirect()->back()->with('notification','Edit successfully');
-	// }
+		$control->save();
+		return redirect()->back()->with('notification','Edit successfully');
+	}
 
 
 	public function get_Control()
