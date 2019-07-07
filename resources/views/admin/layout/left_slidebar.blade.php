@@ -45,7 +45,7 @@
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="admin/app/modbustcp/device">Device</a></li>
                         <li><a href="admin/app/modbustcp/parameter">Parameter</a></li>
-                        <li><a href="admin/app/modbustcp/value">Config</a></li>
+                        <li><a href="admin/app/modbustcp/control">Control</a></li>
                         <li><a href="admin/app/modbustcp/value">Value</a></li>
                         <li><a href="admin/app/modbustcp/chart">Chart</a></li>
                         <li><a href="admin/app/modbustcp/export">Export</a></li>

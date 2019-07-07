@@ -145,6 +145,16 @@ Route::group(['prefix' => 'admin','middleware' => 'adminLogin'], function() {
                 Route::post('edit/{id}','InsModbustcpParameterController@post_Edit_Admin');
             });
 
+            Route::group(['prefix' => 'control'], function() {
+                Route::get('/','InsModbustcpControlController@get_List_Admin');
+
+                Route::get('add','InsModbustcpControlController@get_Add_Admin');
+                Route::post('add','InsModbustcpControlController@post_Add_Admin');
+
+                // Route::get('edit/{id}','InsModbustcpParameterController@get_Edit_Admin');
+                // Route::post('edit/{id}','InsModbustcpParameterController@post_Edit_Admin');
+            });
+
             Route::group(['prefix' => 'value'], function() {
                 Route::get('/','InsModbustcpValueController@get_List_Admin');
 
@@ -195,26 +205,6 @@ Route::group(['prefix' => 'member'], function() {
 Route::group(['prefix' => 'scada'], function() {
     //Instrument Mobustcp
     Route::group(['prefix' => 'modbustcp'], function() {
-        // Route::group(['prefix' => 'device'], function() {
-        //     Route::get('/','InsModbustcpDeviceController@get_List_Admin');
-
-        //     Route::get('add','InsModbustcpDeviceController@get_Add_Admin');
-        //     Route::post('add','InsModbustcpDeviceController@post_Add_Admin');
-
-        //     //Route::get('edit/{id}','HelpdeskController@get_Edit_Admin');
-        //     //Route::post('edit/{id}','HelpdeskController@post_Edit_Admin');
-        // });
-
-        // Route::group(['prefix' => 'parameter'], function() {
-        //     Route::get('/','InsModbustcpParameterController@get_List_Admin');
-
-        //     Route::get('add','InsModbustcpParameterController@get_Add_Admin');
-        //     Route::post('add','InsModbustcpParameterController@post_Add_Admin');
-
-        //     Route::get('edit/{id}','InsModbustcpParameterController@get_Edit_Admin');
-        //     Route::post('edit/{id}','InsModbustcpParameterController@post_Edit_Admin');
-        // });
-
         Route::group(['prefix' => 'value'], function() {
             Route::get('/','InsModbustcpValueController@get_List');
 
@@ -243,6 +233,12 @@ Route::group(['prefix' => 'scada'], function() {
             //Dashboard
             Route::get('/','InsModbustcpRealtime@get_Dashboard_Realtime');
             Route::get('/2','InsModbustcpRealtime@get_Dashboard_Realtime_2');    
+        });
+
+        Route::group(['prefix' => 'control'], function() {
+            Route::get('/','InsModbustcpControlController@get_Control');
+
+           
         });
     });
 });
@@ -302,4 +298,7 @@ Route::get('/vue', function () {
     return view('welcome2');
     //return view('admin.user.list');
 });
+
+
+Route::get('/elephantio', 'InsModbustcpControlController@testElephant');
 

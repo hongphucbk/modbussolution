@@ -5,11 +5,17 @@ io.on('error', function(socket) {
 	console.log('error');
 });
 
+
+
 io.on('connection', function(socket) {
 	console.log('Co nguoi vua ket noi id = ' + socket.id);
 
 	socket.on('modbustcp1', function(msg){
 	    console.log('modbustcp: ' + msg);
+	});
+
+	socket.on('eventMsg', function(socket) {
+		console.log('hello');
 	});
 
 	//

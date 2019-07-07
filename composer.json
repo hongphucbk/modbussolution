@@ -12,8 +12,10 @@
         "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0",
         "maatwebsite/excel": "^3.1",
+        "moura137/laravel-elephantio": "^1.0",
         "nao-pon/flysystem-google-drive": "~1.1",
-        "predis/predis": "^1.1"
+        "predis/predis": "^1.1",
+        "wisembly/elephant.io": "^3.3"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

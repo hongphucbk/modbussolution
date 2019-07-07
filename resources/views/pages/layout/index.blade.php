@@ -21,7 +21,7 @@
 
 	<!-- Document Title
 	============================================= -->
-	<title>Home | Phuc Truong</title>
+	<title>Modbus Solution</title>
 	<base href="{{asset('')}}">
 	<!-- Insert CSS
 	============================================= -->
@@ -46,18 +46,18 @@
 
 				<div class="container clearfix">
 					<div class="slider-caption slider-caption-center">
-						<h2 data-animate="fadeInUp">Phuc Truong</h2>
+						<h2 data-animate="fadeInUp">MODBUS SOLUTION</h2>
 						<p class="d-none d-sm-block" data-animate="fadeInUp" data-delay="50">Hello, Welcome to my web &amp; Have nice day.</p>
 						<a data-animate="fadeInUp" data-delay="400" href="#" class="button button-border button-light button-rounded button-large noleftmargin nobottommargin d-none d-md-inline-block" style="margin-top: 30px;">PLC</a>
 						<a data-animate="fadeInUp" data-delay="200" href="#" class="button button-3d button-teal button-large nobottommargin d-none d-md-inline-block" style="margin: 30px 0 0 10px;">INSTRUMENT</a>
 					</div>
 				</div>
 				<div class="video-wrap">
-					<video poster="images/videos/explore.jpg" preload="auto" loop autoplay muted>
+					<!-- <video poster="images/videos/explore.jpg" preload="auto" loop autoplay muted>
 						<source src='images/videos/explore1.mp4' type='video/mp4' />
 						<source src='images/videos/explore.webm' type='video/webm' />
 					</video>
-					<div class="video-overlay" style="background-color: rgba(0,0,0,0.45);"></div>
+					<div class="video-overlay" style="background-color: rgba(0,0,0,0.45);"></div> -->
 				</div>
 
 			</div>

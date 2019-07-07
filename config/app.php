@@ -146,10 +146,12 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        
 
         /*
          * Package Service Providers...
          */
+        Moura137\LaravelElephant\ElephantServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -161,6 +163,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
         App\Providers\GoogleDriveServiceProvider::class,
+
 
     ],
 
@@ -211,6 +214,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+        'Elephant'    => Moura137\LaravelElephant\ElephantFacade::class,
     ],
 
 ];

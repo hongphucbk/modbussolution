@@ -23,10 +23,10 @@
                             <a href="scada/modbustcp/realtime" class="waves-effect"><i class="fa fa-cog fa-spin m-r-10" aria-hidden="true"></i>Value</a>
                         </li>
                          
-                        <!-- <li>
-                            <a href="icon-fontawesome.html" class="waves-effect"><i class="fa fa-font m-r-10" aria-hidden="true"></i>Icons</a>
+                        <li>
+                            <a href="scada/modbustcp/control" class="waves-effect"><i class="fa  fa-bolt m-r-10" aria-hidden="true"></i>Control</a>
                         </li>
-                         -->
+                        
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->

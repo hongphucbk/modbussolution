@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="source/images/favicon.png">
-    <title>Phuc Truong</title>
+    <title>Modbus Solution</title>
     <base href="{{asset('')}}">
     <!-- This page CSS -->
     <!-- chartist CSS -->

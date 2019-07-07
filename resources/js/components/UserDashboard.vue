@@ -2,10 +2,13 @@
     <div class="user-dashboard">
         This is user dashboard
         <div class="list-user-comp">
-            <ListUser></ListUser>
+            <h4>List User</h4>
+            <ListUser @userSelected="childrenSelectUser"></ListUser>
         </div>
+        <hr>
         <div class="user-detail-comp">
-            <UserDetail></UserDetail>
+            <h4>User Detail</h4>
+            <UserDetail :userDetailInfo="userSelectedFromChild"></UserDetail>
         </div>
     </div>
 </template>
@@ -17,7 +20,19 @@
         components: {
             ListUser,
             UserDetail
-        }
+        },
+        methods: {
+            // Process event emitted from child
+            childrenSelectUser(user) {
+                console.log(user)
+                this.userSelectedFromChild = user
+            }
+        },
+        data() {
+            return {
+                userSelectedFromChild: {}
+            }
+        },
     }
 
     

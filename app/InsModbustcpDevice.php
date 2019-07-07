@@ -12,4 +12,9 @@ class InsModbustcpDevice extends Model
     {
     	return $this->hasMany('App\InsModbustcpParameter','device_id','id');
     }
+
+    public function ins_modbustcp_control()
+    {
+    	return $this->hasMany('App\InsModbustcpControl','device_id','id');
+    }
 }

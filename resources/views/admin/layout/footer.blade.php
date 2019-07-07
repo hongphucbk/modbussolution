@@ -1,4 +1,4 @@
 <footer class="footer">
 
-    © 2018 Phuc Truong
+    © 2019 Modbus Solution
 </footer>

@@ -7,7 +7,7 @@
 	<div class="container clearfix">
 
 		<div class="col_half">
-			Copyrights &copy; 2018 Developed by Phuc Truong<br>
+			Copyrights &copy; 2019 - MODBUS SOLUTION<br>
 			<div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
 		</div>
 
