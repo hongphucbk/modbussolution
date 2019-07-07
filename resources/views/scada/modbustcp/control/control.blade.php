@@ -47,26 +47,33 @@
     <div class="row">
         @foreach($controls as $key => $val)
         <!-- Column -->
-        <div class="col-sm-3">
+        <div class="col-md-3">
             <div class="card">
                 <div class="card-block" style="text-align: center;">
-                    <
-                    <div class="circle"></div>
-                    <br>
+                    <div style="font-weight: bold;">{{ $val->name}}</div>
+                    <!-- <div class="circle"></div> -->
+                    
                     <button type="button" class="btn btn-success .btn-lg" 
                         data-toggle="modal"       
                         data-target="#confirmModal" 
                         data-id="{{ $val->id }}"
                         data-name="{{ $val->name }}"
+                        data-register="{{ $val->register }}"
+                        data-value="1"
                         >TRUE</button>
-                    <button type="button" class="btn btn-secondary .btn-lg">FALSE</button>
-                    
+                    <button type="button" class="btn btn-secondary .btn-lg"
+                        data-toggle="modal"       
+                        data-target="#confirmModal" 
+                        data-id="{{ $val->id }}"
+                        data-name="{{ $val->name }}"
+                        data-register="{{ $val->register }}"
+                        data-value="0"
+
+                    >FALSE</button>
 
                     <!-- onclick="gauge1.update(NewValue());" -->
                     <!-- <span class="text-info">Độ ẩm hiện tại</span> -->
-
                 </div>
-
             </div>
         </div>
 
@@ -86,37 +93,28 @@
                 <form id="form" action="admin/app/modbustcp/control/submit" method="post">
                     {{ csrf_field() }}
                     <div class="form-body">
-                        
+                        <input type="hidden" name="id" id="id">
                         <div class="row p-t-20">
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="control-label">Control Name: <span id="name" class="data"></span></label>
                                     <!-- <div id="name"></div> -->
                                     <input type="hidden" class="form-control" name="name" id="namedisplay" value="" >
                                 </div>
                             </div>
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="control-label">Control Name: <span id="name" class="data"></span></label>
+                                    <label class="control-label">Register: <span id="register" class="data"></span></label>
                                 <!-- <div id="name"></div> -->
-                                    <input type="hidden" class="form-control" name="name" id="namedisplay" value="" >
+                                    <input type="hidden" class="form-control" name="register" id="namedisplay" value="" >
                                 </div>
                             </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label class="control-label">Scale Value</label>
-                                        <input type="text" class="form-control" name="scalevalue" placeholder="Ex: 1, 0.1, 10 ...">
-                                        <small class="form-control-feedback"> This is scalevalue </small> </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="control-label">Value: <span id="value" class="data"></span></label>
+                                    <input type="hidden" class="form-control" name="value" id="namedisplay" value="" >
                                 </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label class="control-label">Slave Id</label>
-                                        <input type="text" class="form-control" name="slaveid" placeholder="Default 1">
-                                        <small class="form-control-feedback"> This is slave id </small> 
-                                    </div>
-                                </div>
-                            
-                            
+                            </div>
                             <!--/span-->
                         </div>
                         <!--/row-->
@@ -201,10 +199,17 @@
             var button = $(e.relatedTarget);
             var id = button.data('id');
             var name = button.data('name');
+            var register = button.data('register');
+            var value = button.data('value');
 
             $('#name').attr("value", name);
+            $('#id').attr("id", id);
+            $('#register').attr("value", register);
+            $('#value').attr("value", value);
+
             document.getElementById("name").innerHTML = name;
-            $('#namedisplay').attr("value", name);
+            document.getElementById("register").innerHTML = register;
+            document.getElementById("value").innerHTML = value;
 
             //var link = e.relatedTarget;
             console.log(id);
