@@ -86,9 +86,12 @@ class InsModbustcpControlController extends Controller
 
 	public function get_Control()
 	{
-		$controls = InsModbustcpControl::all();
+		$controls = InsModbustcpControl::where('type','Button')
+										->get();
+		$text_controls = InsModbustcpControl::where('type','Text')
+										->get();
 
-		return view('scada.modbustcp.control.control', compact('controls'));
+		return view('scada.modbustcp.control.control', compact('controls','text_controls'));
 	}
 
 	public function testElephant()
