@@ -20,7 +20,7 @@
         "vue": "^2.5.7"
     },
     "dependencies": {
-        "ioredis": "^4.9.5",
+        "ioredis": "^4.11.1",
         "socket.io": "^2.2.0"
     }
 }
