@@ -271,7 +271,8 @@
 
 
         <script>
-            var socket = io('http://localhost:6001');
+            //var socket = io('http://localhost:6001');
+            var socket = io('127.0.0.1:6001');
             //var socket = io('10.230.131.3:6001');
 
             socket.on('modbus',function(data) {
