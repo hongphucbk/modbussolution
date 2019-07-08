@@ -86,7 +86,8 @@
     <script type="text/javascript" src="scada/js/socket.io.dev.js"></script>
 
         <script>
-            var socket = io('http://localhost:6001');
+            //var socket = io('http://localhost:6001');
+            var socket = io('127.0.0.1:6001');
             socket.on('modbus',function(data) {
                 console.log(data);
                 // $('#pValue').text(data);

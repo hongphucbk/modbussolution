@@ -65,4 +65,19 @@ class InsModbustcpDeviceController extends Controller
 		$device->save();
 		return redirect()->back()->with('notification','Add successfully');
 	}
+
+	fun
+	get_Export_Admin
+
+	$type = "xlsx";
+        $today = Carbon::now();
+        $ngay = $request->DateFind;
+        $ngay2 = $request->DateFind2;
+        $ngay =  Carbon::create(substr($ngay, 0, 4), substr($ngay, 5, 2), substr($ngay, 8, 2), 0, 0, 0);
+        $ngay2 = Carbon::create(substr($ngay2, 0, 4), substr($ngay2, 5, 2), substr($ngay2, 8, 2), 23, 59, 59);
+
+        $duoi1 = date('Ymd');
+        $duoi2 = date('His');
+
+		return (new ModbustcpExport($ngay,$ngay2 ))->download('Modbus TCP-'.$duoi1.'-'.$duoi2.'.xlsx');
 }

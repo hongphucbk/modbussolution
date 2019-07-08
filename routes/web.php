@@ -133,6 +133,8 @@ Route::group(['prefix' => 'admin','middleware' => 'adminLogin'], function() {
 
                 Route::get('edit/{id}','InsModbustcpDeviceController@get_Edit_Admin');
                 Route::post('edit/{id}','InsModbustcpDeviceController@post_Edit_Admin');
+
+                Route::get('export','InsModbustcpDeviceController@get_Export_Admin');
             });
 
             Route::group(['prefix' => 'parameter'], function() {
