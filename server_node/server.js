@@ -20,7 +20,9 @@ io.on('connection', function(socket) {
 
 	//Receive data from Web fontend - Button
 	socket.on('write_data_button', function(data) {
+
 		console.log(data);
+		io.emit('webwrite', data);
 	});
 
 	//Receive data from Web fontend - Text
