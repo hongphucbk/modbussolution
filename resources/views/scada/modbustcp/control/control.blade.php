@@ -197,7 +197,7 @@
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                 <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
                 <button type="button" class="btn btn-primary" id="write_data_button" 
-                    data-send="127.0.0.1,1,40001,125"
+                    data-send = ""
                 >Write</button>
               </div>
             </div>
@@ -240,7 +240,9 @@
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                 <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-                <button type="button" class="btn btn-primary" id="write_data_text">Write</button>
+                <button type="button" class="btn btn-primary" id="write_data_text"
+                    data-send = ""
+                >Write</button>
               </div>
             </div>
           </div>
@@ -287,17 +289,16 @@
                 
             })
 
-            $("#write_data_button").click(function(e) {
-                var button1 = $(e.relatedTarget);
-                var datasend = button1.data('send');
-                datasend = "127.0.0.1,1,40001,1"
-                console.log("Hihi, Da emit buton " + datasend);
+            $("#write_data_button").click(function() {
+                var datasend = this.getAttribute('data-send');
+                console.log("Hihi, Da emit: " + datasend);
                 socket.emit('write_data_button', datasend);
             });
 
-            $( "#write_data_text" ).click(function() {
-                console.log("Hihi, Da emit data text");
-                socket.emit('write_data_text','hihi');
+            $("#write_data_text").click(function() {
+                var datasend = this.getAttribute('data-send');
+                console.log("Hihi, Da emit: " + datasend);
+                socket.emit('write_data_text', datasend);
             });
 
         </script>
@@ -325,14 +326,10 @@
             document.getElementById("name").innerHTML = name;
             document.getElementById("register").innerHTML = register;
             document.getElementById("value").innerHTML = value;
-
-            //var link = e.relatedTarget;
             
             var data_send = ipaddress + "," + slaveid + "," + register + "," + value;
-            console.log(data_send);
+            console.log("Da gan vao data-send: " + data_send);
             $('#write_data_button').attr("data-send", data_send);
-            
-            
         });
 
         $('#confirmModal_Text').on('shown.bs.modal', function(e) {
@@ -340,21 +337,20 @@
             var id = button.data('id');
 
             var array = id.split(",");
+            var data_send = "";
+
             for (i = 1; i < array.length; i++) { 
               //text += cars[i] + "<br>";
               console.log(array[i]);
               var temp = document.getElementById(array[i]).value
               document.getElementById("display"+array[i]).innerHTML = temp;
               
+              data_send = data_send + array[i] + "," + temp + ",";
+
             }
-
-            // var name = button.data('name');
-            // var register = button.data('register');
-            // var value = button.data('value');
-
-            // ;
-
-
+            data_send = data_send.substr(0,data_send.length - 1)
+            console.log("Da gan vao data-send: " + data_send);
+            $('#write_data_text').attr("data-send", data_send);
 
 
             // $('#name').attr("value", name);

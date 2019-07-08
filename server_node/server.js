@@ -20,14 +20,16 @@ io.on('connection', function(socket) {
 
 	//Receive data from Web fontend - Button
 	socket.on('write_data_button', function(data) {
-
-		console.log(data);
+		console.log("Da nhan: " + data);
 		io.emit('webwrite', data);
+		console.log("Da gui: " + data);
 	});
 
 	//Receive data from Web fontend - Text
 	socket.on('write_data_text', function(data) {
-		console.log('button');
+		console.log("Da nhan: " + data);
+		io.emit('webwritetext', data);
+		console.log("Da gui: " + data);
 	});
 
 
