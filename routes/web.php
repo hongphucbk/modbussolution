@@ -145,6 +145,8 @@ Route::group(['prefix' => 'admin','middleware' => 'adminLogin'], function() {
 
                 Route::get('edit/{id}','InsModbustcpParameterController@get_Edit_Admin');
                 Route::post('edit/{id}','InsModbustcpParameterController@post_Edit_Admin');
+
+                Route::get('export','InsModbustcpParameterController@get_Export_Admin');
             });
 
             Route::group(['prefix' => 'control'], function() {
@@ -155,6 +157,8 @@ Route::group(['prefix' => 'admin','middleware' => 'adminLogin'], function() {
 
                 Route::get('edit/{id}','InsModbustcpControlController@get_Edit_Admin');
                 Route::post('edit/{id}','InsModbustcpControlController@post_Edit_Admin');
+                
+                Route::get('export','InsModbustcpControlController@get_Export_Admin');
             });
 
             Route::group(['prefix' => 'value'], function() {

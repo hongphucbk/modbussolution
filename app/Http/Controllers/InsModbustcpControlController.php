@@ -7,7 +7,8 @@ use App\InsModbustcpDevice;
 use App\InsModbustcpParameter;
 use App\InsModbustcpControl;
 use App\InsModbustcpValue;
-use Moura137\LaravelElephant\ElephantFacade;
+use App\Exports\ControlExport;
+
 class InsModbustcpControlController extends Controller
 {
     public function get_List_Admin()
@@ -94,13 +95,13 @@ class InsModbustcpControlController extends Controller
 		return view('scada.modbustcp.control.control', compact('controls','text_controls'));
 	}
 
-	public function testElephant()
+	public function get_Export_Admin()
 	{
-		ElephantFacade::emit('eventMsg', array('foo' => 'bar'));
-		//return view('scada.modbustcp.control.control', compact('controls'));
+		$type = "xlsx";
+        $duoi1 = date('Ymd');
+        $duoi2 = date('His');
+
+		return (new ControlExport())->download('Modbus TCP Control-'.$duoi1.'-'.$duoi2.'.xlsx');
 	}
-
-		
-
 
 }

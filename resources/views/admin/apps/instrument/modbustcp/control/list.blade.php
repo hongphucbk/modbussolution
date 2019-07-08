@@ -12,9 +12,12 @@
         <div class="col-md-7 align-self-center text-right">
             <div class="d-flex justify-content-end align-items-center">
                 <ol class="breadcrumb">
-                    <!-- <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                    <li class="breadcrumb-item active">Parameter</li> -->
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">Modbus TCP</a></li>
+                    <li class="breadcrumb-item active">Control</li>
                 </ol>
+                <a href="admin/app/modbustcp/control/export">
+                    <button type="button" class="btn btn-info d-none d-lg-block m-l-15"><i class="fa fa fa-file-excel-o"></i> Control Export </button>
+                </a>
                 <a href="admin/app/modbustcp/control/add">
                 <button type="button" class="btn btn-info d-none d-lg-block m-l-15"><i class="fa fa-plus-circle"></i> Create New</button></a>
             </div>

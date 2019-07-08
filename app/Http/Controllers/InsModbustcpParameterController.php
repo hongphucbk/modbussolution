@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\InsModbustcpDevice;
 use App\InsModbustcpParameter;
 use App\InsModbustcpValue;
+use App\Exports\ParameterExport;
+
 
 class InsModbustcpParameterController extends Controller
 {
@@ -78,6 +80,15 @@ class InsModbustcpParameterController extends Controller
 		
 		$parameter->save();
 		return redirect()->back()->with('notification','Edit successfully');
+	}
+
+	public function get_Export_Admin()
+	{
+		$type = "xlsx";
+        $duoi1 = date('Ymd');
+        $duoi2 = date('His');
+
+		return (new ParameterExport())->download('Modbus TCP Parameter-'.$duoi1.'-'.$duoi2.'.xlsx');
 	}
 
 }
