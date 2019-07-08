@@ -94,6 +94,8 @@
                         data-id="{{ $val->id }}"
                         data-name="{{ $val->name }}"
                         data-register="{{ $val->register }}"
+                        data-slaveid="{{ $val->slaveid }}"
+                        data-ipaddress="{{ $val->ins_modbustcp_device->IPaddress }}"
                         data-value="1"
                         >TRUE</button>
                     <button type="button" class="btn btn-secondary .btn-lg"
@@ -101,7 +103,9 @@
                         data-target="#confirmModal" 
                         data-id="{{ $val->id }}"
                         data-name="{{ $val->name }}"
+                        data-slaveid="{{ $val->slaveid }}"
                         data-register="{{ $val->register }}"
+                        data-ipaddress="{{ $val->ins_modbustcp_device->IPaddress }}"
                         data-value="0"
 
                     >FALSE</button>
@@ -192,7 +196,9 @@
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                 <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-                <button type="button" class="btn btn-primary" id="test">Write</button>
+                <button type="button" class="btn btn-primary" id="write_data_button" 
+                    data-send="127.0.0.1,1,40001,125"
+                >Write</button>
               </div>
             </div>
           </div>
@@ -234,7 +240,7 @@
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                 <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-                <button type="button" class="btn btn-primary" id="test">Write</button>
+                <button type="button" class="btn btn-primary" id="write_data_text">Write</button>
               </div>
             </div>
           </div>
@@ -264,9 +270,9 @@
     <script type="text/javascript" src="scada/js/socket.io.dev.js"></script>
 
 
-        <!-- <script>
-            //var socket = io('http://localhost:6001');
-            var socket = io('10.230.131.3:6001');
+        <script>
+            var socket = io('http://localhost:6001');
+            //var socket = io('10.230.131.3:6001');
 
             socket.on('modbus',function(data) {
                 console.log(data);
@@ -280,12 +286,20 @@
                 
             })
 
-            $( "#test" ).click(function() {
-                console.log("Hihi, Da emit");
-                socket.emit('eventMsg','hihi');
+            $("#write_data_button").click(function(e) {
+                var button1 = $(e.relatedTarget);
+                var datasend = button1.data('send');
+                datasend = "127.0.0.1,1,40001,1"
+                console.log("Hihi, Da emit buton " + datasend);
+                socket.emit('write_data_button', datasend);
             });
 
-        </script> -->
+            $( "#write_data_text" ).click(function() {
+                console.log("Hihi, Da emit data text");
+                socket.emit('write_data_text','hihi');
+            });
+
+        </script>
         <script>
 
 
@@ -296,8 +310,11 @@
             var button = $(e.relatedTarget);
             var id = button.data('id');
             var name = button.data('name');
+            var ipaddress = button.data('ipaddress');
             var register = button.data('register');
             var value = button.data('value');
+            var slaveid = button.data('slaveid');
+
 
             $('#name').attr("value", name);
             $('#id').attr("id", id);
@@ -309,14 +326,11 @@
             document.getElementById("value").innerHTML = value;
 
             //var link = e.relatedTarget;
-            console.log(id);
-            // var link     = e.relatedTarget(),
-            modal    = $(this),
-            //     id = link.data("id"),
-            //     email    = link.data("email");
-
-            modal.find("name").val(id);
-            // //modal.find("#username").val(username);
+            
+            var data_send = ipaddress + "," + slaveid + "," + register + "," + value;
+            console.log(data_send);
+            $('#write_data_button').attr("data-send", data_send);
+            
             
         });
 

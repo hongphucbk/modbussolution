@@ -18,6 +18,17 @@ io.on('connection', function(socket) {
 		console.log('hello');
 	});
 
+	//Receive data from Web fontend - Button
+	socket.on('write_data_button', function(data) {
+		console.log(data);
+	});
+
+	//Receive data from Web fontend - Text
+	socket.on('write_data_text', function(data) {
+		console.log('button');
+	});
+
+
 	//
 	socket.on('webwritestart', function(msg){
 	    console.log('Đã kết nối: ' + msg);
@@ -31,6 +42,9 @@ io.on('connection', function(socket) {
 			
 			
 		io.emit('webwrite', data); 
+
+		data1 = "1, 14, 2, 15, 3,17";
+		io.emit('webwritetext', data1);
 	});
 
 	socket.on('modbustcp', function(msg){
