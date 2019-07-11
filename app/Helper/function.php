@@ -102,4 +102,24 @@ function get_Member_Helpdesk_Ticket_Pending($id)
 	return count( App\HelpdeskActivity::where('raised_id',$id)->where('status','>=',20)->where('status','<=',60)->get() );
 }
 
+    function get_Count_All_Device()
+    {
+        return count( App\InsModbustcpDevice::all() );
+    }
+
+    function get_Count_All_Parameter()
+    {
+        return count( App\InsModbustcpParameter::all() );
+    }
+
+    function get_Count_All_Control()
+    {
+        return count( App\InsModbustcpControl::all() );
+    }
+
+    function get_Count_All_Record()
+    {
+        return count( App\InsModbustcpValue::all() );
+    }
+
 ?>

@@ -37,10 +37,10 @@
                         <div class="d-flex no-block align-items-center">
                             <div>
                                 <h3><i class="icon-screen-desktop"></i></h3>
-                                <p class="text-muted">MYNEW CLIENTS</p>
+                                <p class="text-muted">All Parameter</p>
                             </div>
                             <div class="ml-auto">
-                                <h2 class="counter text-primary">23</h2>
+                                <h2 class="counter text-primary">{{get_Count_All_Parameter()}}</h2>
                             </div>
                         </div>
                     </div>
@@ -61,10 +61,10 @@
                         <div class="d-flex no-block align-items-center">
                             <div>
                                 <h3><i class="icon-note"></i></h3>
-                                <p class="text-muted">NEW PROJECTS</p>
+                                <p class="text-muted">All Control</p>
                             </div>
                             <div class="ml-auto">
-                                <h2 class="counter text-cyan">169</h2>
+                                <h2 class="counter text-cyan">{{ get_Count_All_Control() }}</h2>
                             </div>
                         </div>
                     </div>
@@ -85,10 +85,10 @@
                         <div class="d-flex no-block align-items-center">
                             <div>
                                 <h3><i class="icon-doc"></i></h3>
-                                <p class="text-muted">NEW INVOICES</p>
+                                <p class="text-muted">All Records</p>
                             </div>
                             <div class="ml-auto">
-                                <h2 class="counter text-purple">157</h2>
+                                <h2 class="counter text-purple">{{ get_Count_All_Record() }}</h2>
                             </div>
                         </div>
                     </div>
@@ -112,13 +112,13 @@
                                 <p class="text-muted">All Device</p>
                             </div>
                             <div class="ml-auto">
-                                <h2 class="counter text-success">{{get_Admin_Helpdesk_All_Category()}}</h2>
+                                <h2 class="counter text-success">{{get_Count_All_Device()}}</h2>
                             </div>
                         </div>
                     </div>
                     <div class="col-12">
                         <div class="progress">
-                            <div class="progress-bar bg-success" role="progressbar" style="width: 85%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 85%; height: 6px;" aria-valuenow="1" aria-valuemin="0" aria-valuemax="10"></div>
                         </div>
                     </div>
                 </div>
@@ -136,7 +136,7 @@
 	        <div class="card">
 	            <div class="card-body">
 	                <h4 class="card-title">DEVICES</h4>
-	                <div class="table-responsive m-t-40">
+	                <div class="table-responsive m-t-10">
                         @if(count($errors)>0)
                             <div class="alert alert-danger">
                                 @foreach($errors->all() as $err)

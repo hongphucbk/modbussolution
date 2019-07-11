@@ -14,7 +14,6 @@ class InsModbustcpControlController extends Controller
     public function get_List_Admin()
 	{
 		$controls = InsModbustcpControl::all();
-
 		return view('admin.apps.instrument.modbustcp.control.list', compact('controls'));
 	}
 

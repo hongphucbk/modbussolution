@@ -136,7 +136,7 @@
 	        <div class="card">
 	            <div class="card-body">
 	                <h4 class="card-title">CONTROL</h4>
-	                <div class="table-responsive m-t-40">
+	                <div class="table-responsive m-t-10">
                         @if(count($errors)>0)
                             <div class="alert alert-danger">
                                 @foreach($errors->all() as $err)

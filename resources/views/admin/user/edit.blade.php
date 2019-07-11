@@ -47,7 +47,7 @@
                             {{session('notification')}}                         
                         </div>
                     @endif
-                    <form action="admin/user/edit/{{$user->id}}" method="post">
+                    <form action="admin/user/edit/{{$user->id}}" method="post" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="form-body">
                             <h3 class="card-title">Edit user <span style="color: blue">{{$user->name}}</span></h3>
@@ -88,6 +88,13 @@
                                     </div>
                                 </div>
                                 <!--/span-->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Avata</label>
+                                        <br>
+                                        <input type="file" name="avata" class="form-control form-control-danger">
+                                    </div>
+                                </div>
                             </div>
                             <!--/row-->
                             

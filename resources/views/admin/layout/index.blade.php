@@ -98,7 +98,7 @@
 
     <script src="source/node_modules/jquery/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap popper Core JavaScript -->
-    <script src="source/node_modules/popper/popper.min.js"></script>
+    <!-- <script src="source/node_modules/popper/popper.min.js"></script> -->
     <script src="source/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- slimscrollbar scrollbar JavaScript -->
     <script src="source/dist/js/perfect-scrollbar.jquery.min.js"></script>
@@ -114,13 +114,13 @@
     <!--morris JavaScript -->
     <script src="source/node_modules/raphael/raphael-min.js"></script>
     <script src="source/node_modules/morrisjs/morris.min.js"></script>
-    <script src="source/dist/js/pages/morris-data.js"></script> 
+    <!-- <script src="source/dist/js/pages/morris-data.js"></script>  -->
 
     <script src="source/node_modules/jquery-sparkline/jquery.sparkline.min.js"></script>
     <!-- Popup message jquery -->
     <!-- <script src="source/node_modules/toast-master/js/jquery.toast.js"></script> -->
     <!-- Chart JS -->
-    <script src="source/dist/js/dashboard1.js"></script>
+    <!-- <script src="source/dist/js/dashboard1.js"></script> -->
     <!-- This is data table -->
     <script src="source/node_modules/datatables/jquery.dataTables.min.js"></script>
     @yield('script')

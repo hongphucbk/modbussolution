@@ -42,7 +42,7 @@
             @if(Auth::check())
             <ul class="navbar-nav my-lg-0">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="scada/assets/images/users/1.jpg" alt="user" class="profile-pic m-r-5" />{{Auth::user()->name}}</a>
+                    <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="upload/avata/{{Auth::user()->avata}}" alt="" class="profile-pic m-r-5" />{{Auth::user()->name}}</a>
                 </li>
             </ul>
             @endif

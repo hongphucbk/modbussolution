@@ -249,11 +249,45 @@ class UserController extends Controller
 		$user->phone = $request->phone;
 		$user->users_group_id = $request->users_group_id;
 		//$user->password = bcrypt(123456); //rand_string(6);
+		//Kiểm tra file
+        if ($request->hasFile('avata')) {
+            $file = $request->avata;
+            //Lấy Tên files
+            // echo 'Tên Files: ' . $file->getClientOriginalName();
+            // echo '<br/>';
+            //Lấy Đuôi File
+            // echo 'Đuôi file: ' . $file->getClientOriginalExtension();
+            // echo '<br/>';
+
+            // //Lấy đường dẫn tạm thời của file
+            // echo 'Đường dẫn tạm: ' . $file->getRealPath();
+            // echo '<br/>';
+
+            // //Lấy kích cỡ của file đơn vị tính theo bytes
+            // echo 'Kích cỡ file: ' . $file->getSize();
+            // echo '<br/>';
+
+            // //Lấy kiểu file
+            // echo 'Kiểu files: ' . $file->getMimeType();
+
+
+            $fullName = $file->getClientOriginalName();
+            $extension = $file->getClientOriginalExtension();
+
+            $fullNameLenght = strlen($fullName);
+            $extensionLenght = strlen($extension);
+            $nameLength = $fullNameLenght - ($extensionLenght + 1);
+            $onlyName = substr($fullName, 0, $nameLength);
+
+            $fileNewName = $onlyName.'_'.date('YmdHis').'.'.$file->getClientOriginalExtension();
+
+            $file->move('upload/avata',$fileNewName);
+            $user->avata = $fileNewName;
+        }
 		$user->save();
 		return redirect()->back()->with('notification','Edit successfully');
 	}
 	
-
 	public function get_Delete_Admin($id)
 	{
 		//Step 1: Delete all user belongTo this group

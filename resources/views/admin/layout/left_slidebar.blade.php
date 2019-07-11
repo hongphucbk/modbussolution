@@ -5,7 +5,7 @@
         <nav class="sidebar-nav">
             <ul id="sidebarnav">
                 @if(Auth::check())
-                <li class="user-pro"> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><img src="source/images/users/1.jpg" alt="user-img" class="img-circle"><span class="" style="color: green">{{ Auth::user()->name }}</span></a>
+                <li class="user-pro"> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><img src="upload/avata/{{Auth::user()->avata}}" alt="user-img" class="img-circle"><span class="" style="color: green">{{ Auth::user()->name }}</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="javascript:void(0)"><i class="ti-user"></i> My Profile</a></li>
                         <!-- <li><a href="javascript:void(0)"><i class="ti-wallet"></i> My Balance</a></li>
@@ -16,7 +16,7 @@
                 </li>
                 @endif
                 <!-- <li class="nav-small-cap">--- PERSONAL</li> -->
-                <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">Dashboard <span class="badge badge-pill badge-cyan ml-auto">4</span></span></a>
+                <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">Dashboard <!-- <span class="badge badge-pill badge-cyan ml-auto">4</span> --></span></a>
                     <!-- <ul aria-expanded="false" class="collapse">
                         <li><a href="index.html">Minimal </a></li>
                         <li><a href="index2.html">Analytical</a></li>
